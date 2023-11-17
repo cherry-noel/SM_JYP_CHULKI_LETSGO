@@ -94,15 +94,10 @@ void Obstacle_Check() {
   Serial.println(distance);
 
   while (distance < 300) {
-    if (distance < 150) {
-      Backward();
-      delay(800);
       Stop();
       delay(50);
       Distance_Measurement();
       delay(100);
-    }
-    else {
       if (val == 0) {
         Right();
         delay(400);
@@ -113,7 +108,7 @@ void Obstacle_Check() {
       }
       Distance_Measurement();
       delay(100);
-    }
+    
   }
 }
 
