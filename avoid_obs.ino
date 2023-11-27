@@ -35,7 +35,7 @@ void setup() {
 void loop() 
 {
 x = bluetooth.read();
-while (x = 'A');
+while (x = 'd');
 {
 Distance_Measurement();
 if(distance < 300)
