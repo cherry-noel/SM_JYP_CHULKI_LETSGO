@@ -10,6 +10,7 @@ int TrigPin = A0;        //초음파센서 출력핀(trig)과 입력핀(echo), �
 int EchoPin = A1;
 long duration, distance;
 int dL, dR;
+char x;
 
 void Obstacle_Check();
 void Distance_Measurement();
