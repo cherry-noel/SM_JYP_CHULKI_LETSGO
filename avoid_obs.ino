@@ -68,6 +68,8 @@ if(distance < 300)
 else 
 {
   Forward();
+  delay(1000);
+  stop();
 }
 }
 }
