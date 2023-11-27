@@ -2,6 +2,9 @@
 #include <AFMotor.h>
 AF_DCMotor motor_L(1);
 AF_DCMotor motor_R(4);
+#define BT_RXD A5
+#define BT_TXD A4
+SoftwareSerial bluetooth(BT_RXD, BT_TXD);
 
 int Lspeed = 170;        //좌측 모터 속도
 int Rspeed = 200;        //우측 모터 속도
@@ -21,7 +24,8 @@ void Left();
 void Stop();
 
 void setup() {
-  Serial.begin(9600);                         // PC와의 시리얼 통신속도
+  Serial.begin(9600);
+  bluetooth.begin(9600);
   Serial.println("Eduino Smart Car Start!");
 
   pinMode(EchoPin, INPUT);                    // EchoPin 입력
@@ -41,10 +45,10 @@ while (x = 'd');
 Distance_Measurement();
 if(distance < 300)
 {
-  stop();
+  Stop();
   Left();
   delay(500);
-  stop();
+  Stop();
   Distance_Measurement();
   dL = distance;
   Right();
@@ -55,14 +59,14 @@ if(distance < 300)
   {
     Left();
     delay(1500);
-    stop();
+    Stop();
     Forward();
   }
   else
   {
     Right();
     delay(500);
-    stop();
+    Stop();
     Forward();
   }
 }
@@ -70,7 +74,7 @@ else
 {
   Forward();
   delay(1000);
-  stop();
+  Stop();
 }
 }
 }
