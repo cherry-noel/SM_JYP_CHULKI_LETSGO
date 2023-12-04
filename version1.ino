@@ -126,7 +126,7 @@ void loop() { // run over and over
             Left()
             delay(250
             Stop()
-            Distance_Measurement(
+            Distance_Measurement()
             dL = distanc
             Right()
             delay(500)
@@ -145,10 +145,9 @@ void loop() { // run over and over
                 Forward();
             }
 
-            else {
-                Forward();
-            }
-            }   
+        else {
+            Forward();
+        }
 
         }
     }
