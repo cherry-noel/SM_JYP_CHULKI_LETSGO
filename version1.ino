@@ -122,15 +122,15 @@ void loop() { // run over and over
             Distance_Measurement();
 
             if(distance < 200) {
-            Stop(
+            Stop()
             Left()
             delay(250
             Stop()
             Distance_Measurement(
             dL = distanc
-            Right(
+            Right()
             delay(500)
-            Stop(
+            Stop()
             Distance_Measurement()
             dR = distance
 
