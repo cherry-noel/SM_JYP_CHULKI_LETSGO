@@ -122,33 +122,33 @@ void loop() { // run over and over
             Distance_Measurement();
 
             if(distance < 200) {
-            Stop()
-            Left()
-            delay(250
-            Stop()
-            Distance_Measurement()
-            dL = distanc
-            Right()
-            delay(500)
-            Stop()
-            Distance_Measurement()
-            dR = distance
-
-            if (dL > dR) {//좌회전
+                Stop();
                 Left();
+                delay(250);
+                Stop();
+                Distance_Measurement();
+                dL = distance;
+                Right();
                 delay(500);
                 Stop();
-                Forward();
-            }
+                Distance_Measurement();
+                dR = distance;
 
+                if (dL > dR) {//좌회전
+                    Left();
+                    delay(500);
+                    Stop();
+                    Forward();
+                }
+
+                else {
+                    Forward();
+                }
+            }
+            
             else {
                 Forward();
             }
-
-        else {
-            Forward();
-        }
-
         }
     }
 }
